@@ -9,7 +9,13 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import Link from "next/link";
-import { MdDashboard } from "react-icons/md";
+import { FaUserCircle } from "react-icons/fa";
+import { MdDashboard, MdShoppingBag } from "react-icons/md";
+import { GiMagnifyingGlass } from "react-icons/gi";
+import { RiFileCopy2Line, RiFileTextLine } from "react-icons/ri";
+import { IoMdPie } from "react-icons/io";
+import { BsFillFileEarmarkTextFill } from "react-icons/bs";
+import { GiGooeyEyedSun } from "react-icons/gi";
 import router from "next/router";
 import React from "react";
 require("./index.less");
@@ -34,10 +40,10 @@ const index = (props: any) => {
         theme="light"
       >
         <div>
-          <a href="/student/my-lessons/all">
+          <a href="/">
             <div
               onClick={() => {
-                router.push("/student/my-lessons/all");
+                router.push("/");
               }}
               className="cursor logo mb-30 text-center"
               style={{ padding: 22 }}
@@ -56,35 +62,38 @@ const index = (props: any) => {
               <Link href="/">Dashboard</Link>
             </Menu.Item>
 
-            <Menu.Item key="2" icon={<MdDashboard />} className="mb-20">
-              <Link href="/">Dashboard</Link>
+            <Menu.Item key="2" icon={<GiMagnifyingGlass />} className="mb-20">
+              <Link href="/lookup">Lookup</Link>
             </Menu.Item>
 
-            <Menu.Item key="3" icon={<MdDashboard />} className="mb-20">
-              <Link href="/">Dashboard</Link>
+            <Menu.Item key="3" icon={<RiFileCopy2Line />} className="mb-15">
+              <Link href="/files">Files</Link>
             </Menu.Item>
 
-            <SubMenu key="4" icon={<ScheduleOutlined />} title="My Lessons">
-              <Menu.Item key="22">
-                <Link href="/student/my-lessons/all">All</Link>
+            <SubMenu
+              key="4"
+              icon={<BsFillFileEarmarkTextFill />}
+              title="Logs"
+              className="mb-15"
+            >
+              <Menu.Item key="42" icon={<RiFileTextLine />}>
+                <Link href="/logs/lookup">Single/Bulk Lookup</Link>
               </Menu.Item>
-              <Menu.Item key="23">
-                <Link href="/student/my-lessons/active">Active</Link>
-              </Menu.Item>
-              <Menu.Item key="24">
-                <Link href="/student/my-lessons/pending">Pending</Link>
-              </Menu.Item>
-              <Menu.Item key="25">
-                <Link href="/student/my-lessons/finished">Finished</Link>
+              <Menu.Item key="43" icon={<IoMdPie />}>
+                <Link href="/logs/daily-usages">Daily Usages</Link>
               </Menu.Item>
             </SubMenu>
 
-            <Menu.Item key="3" icon={<UserOutlined />}>
-              <Link href="/student/account">Profile</Link>
+            <Menu.Item key="5" icon={<MdShoppingBag />} className="mb-20">
+              <Link href="/buy-credits">Buy Credits</Link>
             </Menu.Item>
 
-            <Menu.Item key="4" icon={<DollarOutlined />}>
-              <Link href="/student/billing/report">Billing </Link>
+            <Menu.Item key="6" icon={<GiGooeyEyedSun />} className="mb-20">
+              <Link href="/integrations">Integrations</Link>
+            </Menu.Item>
+
+            <Menu.Item key="7" icon={<FaUserCircle />} className="mb-20">
+              <Link href="/my-profile">My Profile</Link>
             </Menu.Item>
           </Menu>
         </div>

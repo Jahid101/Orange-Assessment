@@ -48,6 +48,8 @@ a {
 
 .ant-layout-header {
   padding: 0 28px;
+  height: 90px;
+  transform: translate(-1px);
 }
 
 .forMobile {
@@ -646,7 +648,7 @@ a {
   // background: #f5f3f3 !important;
 }
 
-.site-layout-background {
+.headerTop {
   // background: #f5f3f3 !important;
 }
 
@@ -719,6 +721,11 @@ a {
   color: @primary;
 }
 
+.headerTop{
+  background: #000000;
+  color: #7D7D7E;
+}
+
 .siteLogo{ 
   max-width: 125px;
   max-height: 70px;
@@ -727,6 +734,8 @@ a {
 .ant-menu{
   color: #7D7D7E;
   background: #000000;
+  overflow: hidden;
+  padding-left: 16px;
 }
 
 .reg-form {
@@ -779,6 +788,10 @@ a {
 
 .ant-menu-item-selected svg, .ant-menu-submenu-selected svg{
   color: @primary;
+}
+
+.ant-menu-item-icon{
+  font-size: 16px !important;
 }
 
 .ant-menu-sub.ant-menu-inline{

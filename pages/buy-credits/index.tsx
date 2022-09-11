@@ -1,7 +1,7 @@
 import MenuComponent from "@Components/MenuComponent";
 import MyProfile from "@Components/MyProfile";
 import AppLayout from "@layout/layout";
-import { Col, Layout, Row } from "antd";
+import { Col, Empty, Layout, Row } from "antd";
 import { Content, Header } from "antd/lib/layout/layout";
 import React from "react";
 require("./index.less");
@@ -10,7 +10,7 @@ const index = () => {
   return (
     <AppLayout>
       <Layout className="not-collapsed">
-        <MenuComponent defaultOpenKeys={"1"} defaultSelectedKeys={"1"} />
+        <MenuComponent defaultOpenKeys={"1"} defaultSelectedKeys={"5"} />
         <Layout className="site-layout">
           <Header
             className="headerTop"
@@ -29,7 +29,7 @@ const index = () => {
             className="uniPadding"
             // style={{ margin: "10px", minHeight: "100vh" }}
           >
-            <div>Hi</div>
+            <div className="mt-30"><Empty /></div>
           </Content>
         </Layout>
       </Layout>
