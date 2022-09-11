@@ -6,7 +6,7 @@
 
 ## Description
 
-[Orange-Assessment](https://orange-assessment.netlify.app/) starter repository. To run the app have to put in the environment files in the root directory
+[Orange-Assessment](https://orange-assessment.netlify.app/) starter repository. To run the app have to put in the environment files in the root directory(if needed)
 
 ## Installation
 
