@@ -12,14 +12,13 @@ const index = () => {
       <Layout className="not-collapsed">
         <MenuComponent defaultOpenKeys={"1"} defaultSelectedKeys={"5"} />
         <Layout className="site-layout">
-          <Header
-            className="headerTop"
-            
-          >
-            <Row>
-              <Col span={9}></Col>
+          <Header className="headerTop">
+            <Row className="height-100">
+              <Col span={15}></Col>
 
-              <Col span={15} className="text-right">
+              <Col span={9} 
+              className="text-right"
+              >
                 <MyProfile></MyProfile>
               </Col>
             </Row>
@@ -29,7 +28,9 @@ const index = () => {
             className="uniPadding"
             // style={{ margin: "10px", minHeight: "100vh" }}
           >
-            <div className="mt-30"><Empty /></div>
+            <div className="mt-30">
+              <Empty />
+            </div>
           </Content>
         </Layout>
       </Layout>
