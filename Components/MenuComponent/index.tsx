@@ -9,6 +9,7 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import Link from "next/link";
+import { MdDashboard } from "react-icons/md";
 import router from "next/router";
 import React from "react";
 require("./index.less");
@@ -38,10 +39,10 @@ const index = (props: any) => {
               onClick={() => {
                 router.push("/student/my-lessons/all");
               }}
-              className="cursor logo mb-30"
+              className="cursor logo mb-30 text-center"
               style={{ padding: 22 }}
             >
-              <img src="/images/impromekLogo.svg" style={{ width: "100%" }} />
+              <img src="/images/siteLogo.svg" className="siteLogo" />
             </div>
           </a>
 
@@ -51,11 +52,19 @@ const index = (props: any) => {
             defaultOpenKeys={["2"]}
             selectedKeys={[props.defaultSelectedKeys]}
           >
-            <Menu.Item key="1" icon={<IdcardOutlined />}>
-              <Link href="/mentors/available">Mentors List</Link>
+            <Menu.Item key="1" icon={<MdDashboard />} className="mb-20">
+              <Link href="/">Dashboard</Link>
             </Menu.Item>
 
-            <SubMenu key="2" icon={<ScheduleOutlined />} title="My Lessons">
+            <Menu.Item key="2" icon={<MdDashboard />} className="mb-20">
+              <Link href="/">Dashboard</Link>
+            </Menu.Item>
+
+            <Menu.Item key="3" icon={<MdDashboard />} className="mb-20">
+              <Link href="/">Dashboard</Link>
+            </Menu.Item>
+
+            <SubMenu key="4" icon={<ScheduleOutlined />} title="My Lessons">
               <Menu.Item key="22">
                 <Link href="/student/my-lessons/all">All</Link>
               </Menu.Item>

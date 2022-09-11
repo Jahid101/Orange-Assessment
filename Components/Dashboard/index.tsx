@@ -9,7 +9,7 @@ require("./index.less");
 const index = () => {
   return (
     <AppLayout>
-      <Layout>
+      <Layout className="not-collapsed">
         <MenuComponent defaultOpenKeys={"1"} defaultSelectedKeys={"1"} />
         <Layout className="site-layout">
           <Header
@@ -23,13 +23,14 @@ const index = () => {
                 <MyProfile></MyProfile>
               </Col>
             </Row>
-
           </Header>
 
           <Content
             className="uniPadding"
-            style={{ margin: "10px", minHeight: "100vh" }}
-          ></Content>
+            // style={{ margin: "10px", minHeight: "100vh" }}
+          >
+            <div>Hi</div>
+          </Content>
         </Layout>
       </Layout>
     </AppLayout>

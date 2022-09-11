@@ -26,6 +26,7 @@ body {
   padding: 0;
   margin: 0;
   height: 100%;
+  font-family: "Poppins" !important;
 }
 
 .white-color {
@@ -642,11 +643,11 @@ a {
 }
 
 .site-layout {
-  background: #f5f3f3 !important;
+  // background: #f5f3f3 !important;
 }
 
 .site-layout-background {
-  background: #f5f3f3 !important;
+  // background: #f5f3f3 !important;
 }
 
 .ant-tabs > .ant-tabs-nav .ant-tabs-nav-wrap,
@@ -718,6 +719,16 @@ a {
   color: @primary;
 }
 
+.siteLogo{ 
+  max-width: 125px;
+  max-height: 70px;
+}
+
+.ant-menu{
+  color: #7D7D7E;
+  background: #000000;
+}
+
 .reg-form {
   width: 500px;
 }
@@ -760,6 +771,47 @@ a {
 
 .submit-btn-container {
   width: 300px;
+}
+
+.ant-menu-submenu-arrow{
+ color: @primary;
+}
+
+.ant-menu-item-selected svg, .ant-menu-submenu-selected svg{
+  color: @primary;
+}
+
+.ant-menu-sub.ant-menu-inline{
+  background: #000000 !important;
+}
+
+.ant-menu-submenu, .ant-menu-submenu-title {
+  background: #000000 !important;
+}
+
+.ant-menu-item {
+  height: 30px !important;
+  background: #000000 !important;
+}
+
+.ant-menu-item a, .ant-menu-submenu-title{
+  color: #7D7D7E;
+}
+
+.ant-menu-item a:hover{
+  color: #FFFFFF;
+}
+
+.ant-menu-light .ant-menu-submenu-title:hover{
+  color: #FFFFFF;
+}
+
+.ant-menu-item-selected a, .ant-menu-submenu-selected{
+  color: #FFFFFF !important;
+}
+
+.ant-menu-item-selected a:hover{
+  color: #FFFFFF;
 }
 
 /* OVERRIDE */
@@ -806,7 +858,7 @@ a {
 }
 
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-  background-color: #e6eeed !important;
+  background-color: #000000 !important;
 }
 
 .ant-steps-item-title {
@@ -1074,15 +1126,17 @@ a {
 }
 
 .not-collapsed {
-  margin-left: 256px;
+  margin-left: 224px;
   // margin-left: 200px;
   // animation-name: example;
   transition: margin-left 0.4s;
 }
 .ant-layout-sider-light {
-  max-width: 256px !important;
-  min-width: 256px !important;
-  width: 256px !important;
+  max-width: 224px !important;
+  min-width: 224px !important;
+  width: 224px !important;
+
+  background: #000000;
 }
 
 .ant-layout-sider-light2 {
