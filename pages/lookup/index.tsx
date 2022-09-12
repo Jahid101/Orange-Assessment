@@ -38,10 +38,7 @@ const index = () => {
             </Row>
           </Header>
 
-          <Content
-            className="uniPadding"
-            // style={{ margin: "10px", minHeight: "100vh" }}
-          >
+          <Content className="uniPadding">
             <div className="name capitalize mb-30">Lookup</div>
             <div className="mt-50">
               <Empty />
