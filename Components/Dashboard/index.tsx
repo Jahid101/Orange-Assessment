@@ -10,7 +10,7 @@ const index = () => {
   return (
     <AppLayout>
       <Layout className="not-collapsed">
-        <MenuComponent defaultOpenKeys={"1"} defaultSelectedKeys={"1"} />
+        <MenuComponent defaultSelectedKeys={"1"} />
         <Layout className="site-layout">
           <Header
             className="headerTop"

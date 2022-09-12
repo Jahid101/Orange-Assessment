@@ -50,7 +50,7 @@ const index = () => {
 
   return (
     <div className="height-100 flex align-center-justify">
-      <div className="height-100 flex align-center">
+      <div className="height-100 flex align-center fontMobile">
         <div>Balance : </div>
         <div className="price mr-25">&nbsp;$125</div>
       </div>
@@ -65,7 +65,7 @@ const index = () => {
               icon={
                 <img
                   src={"/images/profileSmall.svg"}
-                  onError={(e: any) => {}}
+                  onError={(e: any) => { }}
                   alt=""
                 />
               }
@@ -76,7 +76,7 @@ const index = () => {
               {"Alexa Jui"}
             </div>
 
-            <div className="mr-10">
+            <div className="mr-15">
               <BsChevronDown style={{ color: "#7D7D7E" }} />
             </div>
           </div>
