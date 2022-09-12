@@ -1,26 +1,38 @@
 import MenuComponent from "@Components/MenuComponent";
+import MobileDrawer from "@Components/MobileDrawer";
 import MyProfile from "@Components/MyProfile";
 import AppLayout from "@layout/layout";
 import { Col, Empty, Layout, Row } from "antd";
 import { Content, Header } from "antd/lib/layout/layout";
-import React from "react";
+import { useState } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
 require("./index.less");
 
-
-
 const index = () => {
+  const [visible, setVisible] = useState(false);
+
   return (
     <AppLayout>
       <Layout className="not-collapsed">
-        <MenuComponent  defaultSelectedKeys={"2"} />
+        <MenuComponent defaultSelectedKeys={"2"} />
         <Layout className="site-layout">
           <Header className="headerTop">
             <Row className="height-100">
-              <Col span={15}></Col>
+              <Col span={3} className="hamBtn">
+                <AiOutlineMenu
+                  className="forMobile"
+                  onClick={() => {
+                    setVisible(true);
+                  }}
+                />
+              </Col>
 
-              <Col span={9}
-                className="text-right"
-              >
+              <MobileDrawer
+                visible={visible}
+                setVisible={setVisible}
+              ></MobileDrawer>
+
+              <Col span={21} className="text-right">
                 <MyProfile></MyProfile>
               </Col>
             </Row>
@@ -28,7 +40,7 @@ const index = () => {
 
           <Content
             className="uniPadding"
-          // style={{ margin: "10px", minHeight: "100vh" }}
+            // style={{ margin: "10px", minHeight: "100vh" }}
           >
             <div className="name capitalize mb-30">Lookup</div>
             <div className="mt-50">

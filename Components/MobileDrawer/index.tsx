@@ -39,7 +39,7 @@ const index = (props: any) => {
                         <div>
                             <Avatar
                                 className="mr-10 ml-15 cursor"
-                                style={{ width: 100, height: 100, border: "1px solid #c9c1c1" }}
+                                style={{ width: 85, height: 85, border: "1px solid #c9c1c1" }}
                                 //@ts-ignore
                                 icon={
                                     <img
