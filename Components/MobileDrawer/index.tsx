@@ -63,19 +63,7 @@ const index = (props: any) => {
                     </div>
 
                     <div className="mt-50">
-                        <Sider
-        className={
-          props.collapsed ? "ant-layout-sider-light2" : "ant-layout-sider-light"
-        }
-        style={{
-          overflow: "auto",
-          height: "100vh",
-          position: "fixed",
-          left: 0,
-        }}
-        trigger={null}
-        theme="light"
-      >
+                        
                         <Menu
                             theme="light"
                             mode="inline"
@@ -120,7 +108,6 @@ const index = (props: any) => {
                                 <Link href="/my-profile">My Profile</Link>
                             </Menu.Item>
                         </Menu>
-                            </Sider>
                     </div>
 
                 </div>
