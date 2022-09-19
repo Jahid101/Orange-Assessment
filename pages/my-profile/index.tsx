@@ -32,6 +32,7 @@ const index = () => {
               <MobileDrawer
                 visible={visible}
                 setVisible={setVisible}
+                defaultSelectedKeys={"7"}
               ></MobileDrawer>
 
               <Col span={21} className="text-right">
