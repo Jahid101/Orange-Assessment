@@ -42,9 +42,7 @@ const index = () => {
           </Header>
 
           <Content
-            className="uniPadding"
-          // style={{ margin: "10px", minHeight: "100vh" }}
-          >
+            className="uniPadding" >
             <div className="name capitalize mb-30">Dashboard</div>
             <div className="mt-50">
               <Empty />
