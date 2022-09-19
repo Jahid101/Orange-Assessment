@@ -1,5 +1,6 @@
 import MenuComponent from "@Components/MenuComponent";
 import MyProfile from "@Components/MyProfile";
+import MobileDrawer from "@Components/MobileDrawer";
 import AppLayout from "@layout/layout";
 import { Col, Empty, Layout, Row } from "antd";
 import { Content, Header } from "antd/lib/layout/layout";
