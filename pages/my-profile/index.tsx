@@ -17,7 +17,7 @@ const index = () => {
     <AppLayout>
       <AppLayout>
       <Layout className="not-collapsed">
-        <MenuComponent defaultSelectedKeys={"1"} />
+        <MenuComponent defaultSelectedKeys={"7"} />
         <Layout className="site-layout">
           <Header className="headerTop">
             <Row className="height-100">
