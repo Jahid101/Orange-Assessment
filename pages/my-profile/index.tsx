@@ -15,7 +15,6 @@ const index = () => {
 
   return (
     <AppLayout>
-      <AppLayout>
       <Layout className="not-collapsed">
         <MenuComponent defaultSelectedKeys={"7"} />
         <Layout className="site-layout">
