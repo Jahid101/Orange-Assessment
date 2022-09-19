@@ -14,13 +14,23 @@ const index = () => {
       <Layout className="not-collapsed">
         <MenuComponent  defaultSelectedKeys={"1"} />
         <Layout className="site-layout">
-          <Header className="headerTop">
+         <Header className="headerTop">
             <Row className="height-100">
-              <Col span={15}></Col>
+              <Col span={3} className="hamBtn">
+                <AiOutlineMenu
+                  className="forMobile"
+                  onClick={() => {
+                    setVisible(true);
+                  }}
+                />
+              </Col>
 
-              <Col span={9}
-                className="text-right"
-              >
+              <MobileDrawer
+                visible={visible}
+                setVisible={setVisible}
+              ></MobileDrawer>
+
+              <Col span={21} className="text-right">
                 <MyProfile></MyProfile>
               </Col>
             </Row>
