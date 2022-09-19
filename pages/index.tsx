@@ -3,12 +3,16 @@ import MyProfile from "@Components/MyProfile";
 import AppLayout from "@layout/layout";
 import { Col, Empty, Layout, Row } from "antd";
 import { Content, Header } from "antd/lib/layout/layout";
+import { AiOutlineMenu } from "react-icons/ai";
 import React from "react";
+import { useState } from "react";
 require("./index.less");
 
 
 
 const index = () => {
+  const [visible, setVisible] = useState(false);
+  
   return (
     <AppLayout>
       <Layout className="not-collapsed">
