@@ -13,7 +13,7 @@ require("./index.less");
 
 const index = () => {
   const [visible, setVisible] = useState(false);
-  
+
   return (
     <AppLayout>
       <Layout className="not-collapsed">
