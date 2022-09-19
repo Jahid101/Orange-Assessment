@@ -62,8 +62,8 @@ const index = (props: any) => {
                         <Menu
                             theme="light"
                             mode="inline"
-                        // defaultOpenKeys={[props.defaultOpenKeys]}
-                        // selectedKeys={[props.defaultSelectedKeys]}
+                        defaultOpenKeys={[props?.defaultOpenKeys]}
+                        selectedKeys={[props?.defaultSelectedKeys]}
                         >
                             <Menu.Item key="1" icon={<MdDashboard />} className="mb-20">
                                 <Link href="/">Dashboard</Link>
