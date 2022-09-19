@@ -13,13 +13,13 @@ require("./index.less");
 
 const index = () => {
   const [visible, setVisible] = useState(false);
-  
+
   return (
     <AppLayout>
       <Layout className="not-collapsed">
-        <MenuComponent  defaultSelectedKeys={"1"} />
+        <MenuComponent defaultSelectedKeys={"1"} />
         <Layout className="site-layout">
-         <Header className="headerTop">
+          <Header className="headerTop">
             <Row className="height-100">
               <Col span={3} className="hamBtn">
                 <AiOutlineMenu
@@ -42,9 +42,7 @@ const index = () => {
           </Header>
 
           <Content
-            className="uniPadding"
-          // style={{ margin: "10px", minHeight: "100vh" }}
-          >
+            className="uniPadding" >
             <div className="name capitalize mb-30">Dashboard</div>
             <div className="mt-50">
               <Empty />
