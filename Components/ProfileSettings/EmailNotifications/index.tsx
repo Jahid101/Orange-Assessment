@@ -1,9 +1,13 @@
 import { Button, Col, Divider, Form, Input, message, Row, Switch } from "antd";
 import { ValidateStatus } from "antd/es/form/FormItem";
 import React, { useState } from "react";
+import UserDataActions from "redux/actions/UserDataActions";
 require("./index.less");
 
 const index = () => {
+  const [loading, setLoading] = useState(false);
+  const [data, setData]: any = useState([]);
+
   const [option1, setOption1] = useState(true);
   const [option2, setOption2] = useState(false);
   const [option3, setOption3] = useState(true);
@@ -20,9 +24,24 @@ const index = () => {
   const onChange1 = (checked: boolean) => {
     setOption1(checked);
   };
+
   const onChange2 = (checked: boolean) => {
+    setLoading(true);
     setOption2(checked);
+
+    UserDataActions.getData(
+      (success: any) => {
+        console.log("success=>", success);
+        setLoading(false);
+        setData(success);
+      },
+      (error: any) => {
+        console.log("error=>", error);
+        setLoading(false);
+      }
+    );
   };
+
   const onChange3 = (checked: boolean) => {
     setOption3(checked);
   };
@@ -121,14 +140,31 @@ const index = () => {
           </div>
 
           <div className="mt-30 flex flex-center-v">
-            <Switch onChange={onChange2} checked={option2} />
+            <Switch onChange={onChange2} checked={option2} loading={loading} />
             <span
               className={
                 option2 ? "options wordBreak" : "optionsInactive wordBreak"
               }
             >
-              Notify me when list export completes
+              Get Users Data
             </span>
+          </div>
+
+          <div className="mt-15">
+            {data?.map((item: any, index: any) => {
+              return (
+                <div key={index}>
+                  <span
+                    style={
+                      item.id % 2 == 0 ? { color: "red" } : { color: "green" }
+                    }
+                  >
+                    {item.id}
+                  </span>{" "}
+                  - Name: {item?.name}
+                </div>
+              );
+            })}
           </div>
 
           <div className="mt-30 flex flex-center-v">
@@ -155,70 +191,72 @@ const index = () => {
             </span>
           </div>
 
-          <Row className="mt-30 leftPadding" gutter={[30, 30]}>
-            <Col
-              xxl={12}
-              xl={12}
-              lg={12}
-              md={24}
-              sm={24}
-              xs={24}
-              className="colRight"
-            >
-              <div className="inputTitle">
-                Send Email to<span className="primary-color">*</span>
-              </div>
-              <Form.Item
-                className="form-label-bottom-item"
-                validateStatus={email.validateStatus as ValidateStatus}
-                help={email.errorMsg || ""}
+          {option4 && (
+            <Row className="mt-30 leftPadding" gutter={[30, 30]}>
+              <Col
+                xxl={12}
+                xl={12}
+                lg={12}
+                md={24}
+                sm={24}
+                xs={24}
+                className="colRight"
               >
-                <Input
-                  value={email.value}
-                  placeholder="Email"
-                  onChange={(e) => {
-                    setEmail({
-                      validateStatus: "success",
-                      value: e.target.value,
-                    });
-                  }}
-                  className="inputField"
-                />
-              </Form.Item>
-            </Col>
+                <div className="inputTitle">
+                  Send Email to<span className="primary-color">*</span>
+                </div>
+                <Form.Item
+                  className="form-label-bottom-item"
+                  validateStatus={email.validateStatus as ValidateStatus}
+                  help={email.errorMsg || ""}
+                >
+                  <Input
+                    value={email.value}
+                    placeholder="Email"
+                    onChange={(e) => {
+                      setEmail({
+                        validateStatus: "success",
+                        value: e.target.value,
+                      });
+                    }}
+                    className="inputField"
+                  />
+                </Form.Item>
+              </Col>
 
-            <Col
-              xxl={12}
-              xl={12}
-              lg={12}
-              md={24}
-              sm={24}
-              xs={24}
-              className="colLeft"
-            >
-              <div className="inputTitle">
-                When credits are less than
-                <span className="primary-color">*</span>
-              </div>
-              <Form.Item
-                className="form-label-bottom-item"
-                validateStatus={credits.validateStatus as ValidateStatus}
-                help={credits.errorMsg || ""}
+              <Col
+                xxl={12}
+                xl={12}
+                lg={12}
+                md={24}
+                sm={24}
+                xs={24}
+                className="colLeft"
               >
-                <Input
-                  value={credits.value}
-                  placeholder="Credits"
-                  onChange={(e) => {
-                    setCredits({
-                      validateStatus: "success",
-                      value: e.target.value,
-                    });
-                  }}
-                  className="inputField"
-                />
-              </Form.Item>
-            </Col>
-          </Row>
+                <div className="inputTitle">
+                  When credits are less than
+                  <span className="primary-color">*</span>
+                </div>
+                <Form.Item
+                  className="form-label-bottom-item"
+                  validateStatus={credits.validateStatus as ValidateStatus}
+                  help={credits.errorMsg || ""}
+                >
+                  <Input
+                    value={credits.value}
+                    placeholder="Credits"
+                    onChange={(e) => {
+                      setCredits({
+                        validateStatus: "success",
+                        value: e.target.value,
+                      });
+                    }}
+                    className="inputField"
+                  />
+                </Form.Item>
+              </Col>
+            </Row>
+          )}
 
           <Button
             className="submitBtn mt-30"
