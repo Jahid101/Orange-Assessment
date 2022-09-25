@@ -1,4 +1,4 @@
-import { Avatar, Drawer, Menu } from 'antd';
+import { Avatar, Drawer, Menu,Layout } from 'antd';
 import Link from 'next/link';
 import router from 'next/router';
 import { FaUserCircle } from "react-icons/fa";
@@ -9,7 +9,11 @@ import { IoMdPie } from "react-icons/io";
 import { BsFillFileEarmarkTextFill } from "react-icons/bs";
 import { GiGooeyEyedSun } from "react-icons/gi";
 import React from 'react';
-require('./index.less')
+require('./index.less');
+
+
+const { SubMenu } = Menu;
+const { Sider } = Layout;
 
 
 const index = (props: any) => {
@@ -59,11 +63,12 @@ const index = (props: any) => {
                     </div>
 
                     <div className="mt-50">
+                        
                         <Menu
                             theme="light"
                             mode="inline"
-                        // defaultOpenKeys={[props.defaultOpenKeys]}
-                        // selectedKeys={[props.defaultSelectedKeys]}
+                        defaultOpenKeys={[props?.defaultOpenKeys]}
+                        selectedKeys={[props?.defaultSelectedKeys]}
                         >
                             <Menu.Item key="1" icon={<MdDashboard />} className="mb-20">
                                 <Link href="/">Dashboard</Link>
